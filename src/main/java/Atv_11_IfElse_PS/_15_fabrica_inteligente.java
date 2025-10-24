@@ -1,0 +1,28 @@
+package Atv_11_IfElse_PS;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class _15_fabrica_inteligente {
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite a vibração da maquina para saber o protocolo");
+        int vibracao = sc.nextInt();
+        System.out.println("Digite a temperatura da maquina para saber o protocolo");
+        int temp = sc.nextInt();
+        System.out.println(max(temp,vibracao));
+        sc.close();
+
+    }
+    public static int max(int temp,int vibracao ){
+        if (vibracao >= 80 && temp >= 90) {
+            System.out.println("A maquina deve ser desligada !!!");
+        } else if (vibracao <= 80 && temp >= 90) {
+            System.out.println("A vibração está okay, fique atento a temperatura");
+        } else if (vibracao >= 80 && temp <= 90) {
+            System.out.println("A temperatura está okay, fique atento a vibração");
+        }
+        return vibracao;
+    }
+}
